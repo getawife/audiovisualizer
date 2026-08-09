@@ -1,5 +1,40 @@
 @import "tailwindcss";
 
-body {
-  background-color: white;
+@layer base {
+  :root {
+    --bg-canvas: #0b0b0d;
+    --bg-surface: #121214;
+    --bg-elevated: #18181b;
+    --border-subtle: #29292d;
+
+    --text-primary: #f5f5f5;
+    --text-secondary: #a1a1aa;
+    --text-muted: #66666d;
+
+    --accent: #ff4500;
+    --accent-hover: #ff571a;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
+    overflow: hidden;
+    margin: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 2px;
 }

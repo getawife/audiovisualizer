@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import LandingPage from "./components/landingPage.js";
-import AudioVisualizer from "./components/AudioVisualizer.js";
+import LandingPage from "../components/landingPage.js";
+import AudioVisualizer from "../components/AudioVisualizer.js";
 
 export default function MainPage() {
   const [musicFile, setMusicFile] = useState(null);
@@ -21,7 +21,7 @@ export default function MainPage() {
   return (
     <main>
       {view === "landing" ? (
-        <LandingPage onComplete={handleFinishedUploading} />
+        <LandingPage onTrackSelect={handleFinishedUploading} />
       ) : (
         <AudioVisualizer file={musicFile} onBack={() => setView("landing")} />
       )}
